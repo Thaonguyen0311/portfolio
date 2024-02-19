@@ -39,9 +39,9 @@ with open('coordinates_gcode.csv', 'w') as f:
         # write the data
         writer.writerow(row)
 ```
-```markdown
-![Coordinators as in CSV file](coordinators.png) 
-```
+
+![Coordinators as in CSV file](coordinators.png)
+
 ### Print the 3D design of the object
 ```python
 import matplotlib.pyplot as plt
