@@ -13,13 +13,13 @@ published = "Jan 02, 2006"
 lastUpdated = "Jan 02, 2006 15:04 MST"
 
 [sidebar]
-emoji = "🍥"
-subtitle = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+emoji = ""
+subtitle = "Passionate and diligent data analyst with four-year experience in e-wallet and audit firms"
 
 [sidebar.avatar]
 enabled = true
 local = true
-src = "img/thao.jpg"
+src = "img/thao_squared.jpg"
 
 [article]
 math = false
