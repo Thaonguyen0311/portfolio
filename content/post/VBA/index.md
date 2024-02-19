@@ -1,5 +1,5 @@
 ---
-title: "VBA automation to get data from Bigquery into a customized formatted report"
+title: "VBA: automatically get data from Bigquery into a customized formatted report"
 description: "Use VBA code to get data from Bigquery and paste in a formatted report as an excel file"
 date: 2024-02-19T19:58:19Z
 image: cover.jpg
