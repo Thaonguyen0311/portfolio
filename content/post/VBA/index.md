@@ -57,3 +57,4 @@ Application.ScreenUpdating = True
 Application.DisplayAlerts = True
 End Sub
 ```
+![Result](revenue.png)
