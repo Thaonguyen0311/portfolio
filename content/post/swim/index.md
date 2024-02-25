@@ -9,11 +9,14 @@ hidden: false
 comments: true
 draft: false
 ---
-Freestyles
-# Common mistakes
+# Freestyles
+## Common mistakes
 {{< youtube sEGotawjueU&list=PL5OuTQZa111Q3GxC-0XJMMQYbscaUf4uP&index=2 >}}
 
-# Perfect your techniques by Swimcycleruncoach channel. Below are two examples
+## Perfect your techniques by Swimcycleruncoach channel. Below are two examples
 {{< youtube xEuN1CAQtiM&list=PL5OuTQZa111Q3GxC-0XJMMQYbscaUf4uP&index=8 >}}
 {{< youtube lZeHClZFS1I&list=PL5OuTQZa111Q3GxC-0XJMMQYbscaUf4uP&index=7 >}}
 
+# Breaststroke
+## Common mistakes
+{{< youtube RE5YESiwAfQ >}}
