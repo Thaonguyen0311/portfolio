@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Thao Nguyen</title><link>https://Thaonguyen0311.github.io/portfolio/</link><description>Recent content on Thao Nguyen</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 19 Feb 2024 20:26:07 +0000</lastBuildDate><atom:link href="https://Thaonguyen0311.github.io/portfolio/index.xml" rel="self" type="application/rss+xml"/><item><title>VBA: automatically get data from Bigquery into a customized formatted report</title><link>https://Thaonguyen0311.github.io/portfolio/p/vba-automatically-get-data-from-bigquery-into-a-customized-formatted-report/</link><pubDate>Mon, 19 Feb 2024 19:58:19 +0000</pubDate><guid>https://Thaonguyen0311.github.io/portfolio/p/vba-automatically-get-data-from-bigquery-into-a-customized-formatted-report/</guid><description>&lt;img src="https://Thaonguyen0311.github.io/portfolio/p/vba-automatically-get-data-from-bigquery-into-a-customized-formatted-report/cover.jpg" alt="Featured image of post VBA: automatically get data from Bigquery into a customized formatted report" />&lt;p>Create a pop-up userform to let users choose what data they want to extract
+&lt;img src="https://Thaonguyen0311.github.io/portfolio/portfolio/p/vba-automatically-get-data-from-bigquery-into-a-customized-formatted-report/userform.png"
+width="2146"
+height="968"
+srcset="https://Thaonguyen0311.github.io/portfolio/portfolio/p/vba-automatically-get-data-from-bigquery-into-a-customized-formatted-report/userform_hu3a7ef741cc14c2c0084b5157acf2e95e_66604_480x0_resize_box_3.png 480w, https://Thaonguyen0311.github.io/portfolio/portfolio/p/vba-automatically-get-data-from-bigquery-into-a-customized-formatted-report/userform_hu3a7ef741cc14c2c0084b5157acf2e95e_66604_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="Interactive Userform"
+class="gallery-image"
+data-flex-grow="221"
+data-flex-basis="532px"
+>
+Then extract data using the following VBA code.&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;span class="lnt">31
+&lt;/span>&lt;span class="lnt">32
+&lt;/span>&lt;span class="lnt">33
+&lt;/span>&lt;span class="lnt">34
+&lt;/span>&lt;span class="lnt">35
+&lt;/span>&lt;span class="lnt">36
+&lt;/span>&lt;span class="lnt">37
+&lt;/span>&lt;span class="lnt">38
+&lt;/span>&lt;span class="lnt">39
+&lt;/span>&lt;span class="lnt">40
+&lt;/span>&lt;span class="lnt">41
+&lt;/span>&lt;span class="lnt">42
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">Public startdate As String
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Public enddate As String
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Sub data_newvertical()
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;#39;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;#39;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Application.ScreenUpdating = False
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Application.DisplayAlerts = False
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">startdate = ActiveWorkbook.Sheets(&amp;#34;MASTER&amp;#34;).Range(&amp;#34;L16&amp;#34;).Value
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">enddate = ActiveWorkbook.Sheets(&amp;#34;MASTER&amp;#34;).Range(&amp;#34;L18&amp;#34;).Value
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;#39;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ActiveWorkbook.Queries.Add Name:=&amp;#34;Query_newvertical&amp;#34;, Formula:= _
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;#34;let&amp;#34; &amp;amp; Chr(13) &amp;amp; &amp;#34;&amp;#34; &amp;amp; Chr(10) &amp;amp; &amp;#34; Source = Odbc.Query(&amp;#34;&amp;#34;dsn=Bigquery&amp;#34;&amp;#34;, &amp;#34;&amp;#34;SELECT YEAR,MONTH,BU_NAME,NEWVERTICAL_Merchant,COUNT(DISTINCT USER_PAYMENT) AS NUMBER_USER, SUM(NUMBER_TRANSACTION) AS NUMBER_TRANSACTION, SUM(VALUE_TRANSACTION) AS VALUE_TRANSACTION FROM `momovn-prod.REPORT.MONTHLY_REPORT_L4_TRANS` WHERE TRANS_DATE BETWEEN &amp;#39;&amp;#34; &amp;amp; startdate &amp;amp; _
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;#34;&amp;#39; AND &amp;#39;&amp;#34; &amp;amp; enddate &amp;amp; &amp;#34;&amp;#39; AND USER_TYPE != &amp;#39;OTHERS&amp;#39; AND master_sim != &amp;#39;Master Sim&amp;#39; GROUP BY 1,2,3,4&amp;#34;&amp;#34;)&amp;#34; &amp;amp; Chr(13) &amp;amp; &amp;#34;&amp;#34; &amp;amp; Chr(10) &amp;amp; &amp;#34;in&amp;#34; &amp;amp; Chr(13) &amp;amp; &amp;#34;&amp;#34; &amp;amp; Chr(10) &amp;amp; &amp;#34; Source&amp;#34; &amp;amp; _
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;#34;&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Sheets.Add After:=ActiveSheet
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> With ActiveSheet.ListObjects.Add(SourceType:=0, Source:= _
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;#34;OLEDB;Provider=Microsoft.Mashup.OleDb.1;Data Source=$Workbook$;Location=Query_newvertical;Extended Properties=&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34; _
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> , Destination:=Range(&amp;#34;$A$1&amp;#34;)).QueryTable
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> .CommandType = xlCmdSql
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> .CommandText = Array(&amp;#34;SELECT * FROM [Query_newvertical]&amp;#34;)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> .RowNumbers = False
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> .FillAdjacentFormulas = False
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> .PreserveFormatting = True
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> .RefreshOnFileOpen = False
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> .BackgroundQuery = True
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> .RefreshStyle = xlInsertDeleteCells
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> .SavePassword = False
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> .SaveData = True
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> .AdjustColumnWidth = True
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> .RefreshPeriod = 0
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> .PreserveColumnInfo = True
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> .ListObject.DisplayName = &amp;#34;Query_newvertical&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> .Refresh BackgroundQuery:=False
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> End With
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Selection.ListObject.QueryTable.Refresh BackgroundQuery:=False
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ActiveWorkbook.Queries(&amp;#34;Query_newvertical&amp;#34;).Delete
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ActiveSheet.Name = &amp;#34;1.New_Vertical&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Columns(&amp;#34;F:H&amp;#34;).NumberFormat = &amp;#34;#,##0&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Application.ScreenUpdating = True
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Application.DisplayAlerts = True
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">End Sub
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;img src="https://Thaonguyen0311.github.io/portfolio/portfolio/p/vba-automatically-get-data-from-bigquery-into-a-customized-formatted-report/revenue.png"
+width="1230"
+height="265"
+srcset="https://Thaonguyen0311.github.io/portfolio/portfolio/p/vba-automatically-get-data-from-bigquery-into-a-customized-formatted-report/revenue_hucd88dc0155b2fc93cf4770fd3ed023fa_54118_480x0_resize_box_3.png 480w, https://Thaonguyen0311.github.io/portfolio/portfolio/p/vba-automatically-get-data-from-bigquery-into-a-customized-formatted-report/revenue_hucd88dc0155b2fc93cf4770fd3ed023fa_54118_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="Result"
+class="gallery-image"
+data-flex-grow="464"
+data-flex-basis="1113px"
+>&lt;/p></description></item><item><title>Python: Sketch the 3D object from a g-code_file</title><link>https://Thaonguyen0311.github.io/portfolio/p/python-sketch-the-3d-object-from-a-g-code_file/</link><pubDate>Mon, 19 Feb 2024 18:54:23 +0000</pubDate><guid>https://Thaonguyen0311.github.io/portfolio/p/python-sketch-the-3d-object-from-a-g-code_file/</guid><description>&lt;img src="https://Thaonguyen0311.github.io/portfolio/p/python-sketch-the-3d-object-from-a-g-code_file/model.png" alt="Featured image of post Python: Sketch the 3D object from a g-code_file" />&lt;h2 id="code-blocks">Code Blocks&lt;/h2>
+&lt;h3 id="extract-coordinators-of-3d-object-from-gcode-file-and-write-them-to-a-csv-file">Extract coordinators of 3D object from Gcode file and write them to a csv file&lt;/h3>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">pandas&lt;/span> &lt;span class="k">as&lt;/span> &lt;span class="nn">pd&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">re&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">csv&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">file_name&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s1">&amp;#39;CE3PRO_cube_with_hole.gcode&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">header&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;X&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;Y&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;E&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">coordinates&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">with&lt;/span> &lt;span class="nb">open&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">file_name&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;r&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="k">as&lt;/span> &lt;span class="n">f&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">content&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">f&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">readlines&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">for&lt;/span> &lt;span class="n">line&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">content&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">line&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">line&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">strip&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">coord&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">re&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">findall&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sa">r&lt;/span>&lt;span class="s1">&amp;#39;[XYE].?\d+.\d+.\d+&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">line&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">try&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="n">coord&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">coordinates&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">append&lt;/span>&lt;span class="p">([&lt;/span>&lt;span class="n">coord&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">:],&lt;/span> &lt;span class="n">coord&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">:],&lt;/span> &lt;span class="n">coord&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">:]])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">except&lt;/span> &lt;span class="ne">IndexError&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">pass&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">with&lt;/span> &lt;span class="nb">open&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;coordinates_gcode.csv&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;w&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="k">as&lt;/span> &lt;span class="n">f&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">writer&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">csv&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">writer&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">f&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># write the header&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">writer&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">writerow&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">header&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">for&lt;/span> &lt;span class="n">row&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">coordinates&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># write the data&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">writer&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">writerow&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">row&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;img src="https://Thaonguyen0311.github.io/portfolio/portfolio/p/python-sketch-the-3d-object-from-a-g-code_file/coordinators.png"
+width="391"
+height="307"
+srcset="https://Thaonguyen0311.github.io/portfolio/portfolio/p/python-sketch-the-3d-object-from-a-g-code_file/coordinators_hubc054e52d8469f5abeb6c769bf534e8a_24439_480x0_resize_box_3.png 480w, https://Thaonguyen0311.github.io/portfolio/portfolio/p/python-sketch-the-3d-object-from-a-g-code_file/coordinators_hubc054e52d8469f5abeb6c769bf534e8a_24439_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="Coordinators as in CSV file"
+class="gallery-image"
+data-flex-grow="127"
+data-flex-basis="305px"
+>&lt;/p>
+&lt;h3 id="print-the-3d-design-of-the-object">Print the 3D design of the object&lt;/h3>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">matplotlib.pyplot&lt;/span> &lt;span class="k">as&lt;/span> &lt;span class="nn">plt&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">fig&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">plt&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">figure&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">figsize&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">12&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">12&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">ax&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">fig&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">add_subplot&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">projection&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s1">&amp;#39;3d&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">plt&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">title&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;3D printing&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">ax&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">scatter&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">df&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;X&amp;#39;&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="n">df&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;Y&amp;#39;&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="n">df&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;E&amp;#39;&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">plt&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">show&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>My swimming hobby</title><link>https://Thaonguyen0311.github.io/portfolio/p/my-swimming-hobby/</link><pubDate>Thu, 01 Feb 2024 20:25:48 +0000</pubDate><guid>https://Thaonguyen0311.github.io/portfolio/p/my-swimming-hobby/</guid><description>&lt;img src="https://Thaonguyen0311.github.io/portfolio/p/my-swimming-hobby/swimcover.png" alt="Featured image of post My swimming hobby" />&lt;p>Head-ups: There might be more useful videos these days since it has been a long time that I was looking into this matter.&lt;/p>
+&lt;h1 id="freestyles">Freestyles&lt;/h1>
+&lt;h2 id="common-mistakes">Common mistakes&lt;/h2>
+&lt;div class="video-wrapper">
+&lt;iframe loading="lazy"
+src="https://www.youtube.com/embed/sEGotawjueU"
+allowfullscreen
+title="YouTube Video"
+>
+&lt;/iframe>
+&lt;/div>
+&lt;h2 id="perfect-your-techniques-by-swimcycleruncoach-channel-below-are-two-examples">Perfect your techniques by Swimcycleruncoach channel. Below are two examples&lt;/h2>
+&lt;div class="video-wrapper">
+&lt;iframe loading="lazy"
+src="https://www.youtube.com/embed/xEuN1CAQtiM"
+allowfullscreen
+title="YouTube Video"
+>
+&lt;/iframe>
+&lt;/div>
+&lt;h1 id="heading">&lt;/h1>
+&lt;div class="video-wrapper">
+&lt;iframe loading="lazy"
+src="https://www.youtube.com/embed/lZeHClZFS1I"
+allowfullscreen
+title="YouTube Video"
+>
+&lt;/iframe>
+&lt;/div>
+&lt;h1 id="breaststroke">Breaststroke&lt;/h1>
+&lt;h2 id="common-mistakes-1">Common mistakes&lt;/h2>
+&lt;div class="video-wrapper">
+&lt;iframe loading="lazy"
+src="https://www.youtube.com/embed/RE5YESiwAfQ"
+allowfullscreen
+title="YouTube Video"
+>
+&lt;/iframe>
+&lt;/div>
+&lt;h1 id="backstroke">Backstroke&lt;/h1>
+&lt;h2 id="common-mistakes-2">Common mistakes&lt;/h2>
+&lt;div class="video-wrapper">
+&lt;iframe loading="lazy"
+src="https://www.youtube.com/embed/pVJjfx47h4k"
+allowfullscreen
+title="YouTube Video"
+>
+&lt;/iframe>
+&lt;/div>
+&lt;h1 id="butterfly">Butterfly&lt;/h1>
+&lt;h2 id="common-mistakes-3">Common mistakes&lt;/h2>
+&lt;div class="video-wrapper">
+&lt;iframe loading="lazy"
+src="https://www.youtube.com/embed/zngV3Ue_y08"
+allowfullscreen
+title="YouTube Video"
+>
+&lt;/iframe>
+&lt;/div></description></item><item><title>Archives</title><link>https://Thaonguyen0311.github.io/portfolio/archives/</link><pubDate>Sun, 06 Mar 2022 00:00:00 +0000</pubDate><guid>https://Thaonguyen0311.github.io/portfolio/archives/</guid><description/></item><item><title>Search</title><link>https://Thaonguyen0311.github.io/portfolio/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Thaonguyen0311.github.io/portfolio/search/</guid><description/></item></channel></rss>
