@@ -7,5 +7,11 @@ math:
 license: 
 hidden: false
 comments: true
-draft: true
+draft: false
 ---
+I designed a chair to serve as a functional and aesthetic dining chair or coffee chair. 
+Considering the yield strength, tensile strength, factor of safety, the chair with Aluminium Alloy 7050 as the main material has successfully gone through the test of stress, displacement, deformation.
+
+![Chair Design](Chair1.png)
+![Chair's legs](leg.png)
+![Chair's back](back.png)
