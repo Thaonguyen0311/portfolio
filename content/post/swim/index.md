@@ -7,7 +7,7 @@ math:
 license: 
 hidden: false
 comments: true
-draft: false
+draft: true
 ---
 Head-ups: There might be more useful videos these days since it has been a long time that I was looking into this matter.
 # Freestyles
