@@ -7,7 +7,7 @@ math:
 license: 
 hidden: false
 comments: true
-draft: false
+draft: true
 ---
 ## Code Blocks
 ### Extract coordinators of 3D object from Gcode file and write them to a csv file
